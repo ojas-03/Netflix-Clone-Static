@@ -1,0 +1,452 @@
+:root {
+    --primary: #e50914;
+    --dark: #000;
+    --light: #fff;
+    --border: #333;
+    --gray: #b3b3b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--dark);
+    color: var(--light);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--light);
+    text-decoration: none;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 10;
+}
+
+.brand {
+    width: 148px;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.lang-picker {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 7px 15px;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='M8 13.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Zm0 0v-11m0 11c2.5 0 2.5-11 2.5-11M8 13.5c-2.5 0-2.5-11-2.5-11'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 8px center;
+    background-size: 16px;
+    padding-left: 30px;
+}
+
+.login {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 7px 17px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.login:hover {
+    background-color: #c11119;
+}
+
+.message {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    margin-top: -50px;
+    padding: 0 20px;
+}
+
+.message h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    max-width: 800px;
+    margin-bottom: 20px;
+    line-height: normal;
+    text-shadow: 2px 2px 4px #000;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.45);
+    border-radius: 4px;
+}
+
+.message h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px #000;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.45);
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.message p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px #000;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.45);
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.signup {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    flex-wrap: wrap;
+}
+
+.signup input {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    color: white;
+}
+
+.signup button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.signup button:hover {
+    background-color: #c11119;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 100%);
+    pointer-events: none;
+}
+
+.showcase {
+    border-top: 8px solid #222;
+    background: var(--dark);
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 45px;
+    border-bottom: 8px solid #222;
+}
+.block.rev {
+    flex-direction: row-reverse;
+}
+
+.info {
+    flex-basis: 50%;
+    padding-right: 20px;
+}
+.block.rev .info {
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+.info h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.info p {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.visual {
+    flex-basis: 48%;
+    position: relative;
+}
+
+.visual img {
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    display: block;
+}
+
+.visual video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.clip-tv {
+    width: 73%;
+    height: 54%;
+    top: 48% !important;
+}
+.clip-dev {
+    width: 63%;
+    top: 34% !important;
+}
+
+.status-card {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    border: 2px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+    width: 60%;
+    min-width: 15rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 3;
+}
+.status-card img {
+    height: 3rem;
+    width: auto;
+}
+.status-txt {
+    flex-grow: 1;
+}
+.status-txt .title {
+    font-weight: 600;
+    font-size: 1rem;
+}
+.status-txt .status {
+    font-size: 0.9rem;
+    color: #0071eb;
+}
+.status-icon {
+    width: 3rem;
+    height: 3rem;
+    background: url('https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif') center no-repeat;
+    background-size: 100%;
+}
+
+.questions {
+    padding: 70px 45px;
+    text-align: center;
+    border-bottom: 8px solid #222;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.questions h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.list li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.toggle {
+    display: none;
+}
+
+.label {
+    background: #2d2d2d;
+    color: white;
+    padding: 24px;
+    width: 100%;
+    text-align: left;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+    user-select: none;
+}
+
+.label:hover {
+    background: #414141;
+}
+
+.label .plus {
+    font-size: 40px;
+    font-weight: 100;
+    transform: rotate(0deg);
+    transition: transform 0.2s;
+}
+
+.toggle:checked + .label .plus {
+    transform: rotate(45deg);
+}
+
+.reply {
+    background: #2d2d2d;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+    overflow: hidden;
+}
+
+.toggle:checked ~ .reply {
+    grid-template-rows: 1fr;
+    margin-top: 1px;
+}
+
+.reply-text {
+    min-height: 0;
+}
+
+.reply p {
+    padding: 24px;
+    font-size: 24px;
+}
+
+.bottom {
+    padding: 70px 45px;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.7);
+}
+.bottom p {
+    margin-bottom: 30px;
+}
+.bottom a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: underline;
+}
+
+.cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+.cols ul {
+    list-style: none;
+}
+.cols ul li {
+    margin-bottom: 10px;
+}
+
+.bottom .lang-picker {
+    color: #999;
+    border: 1px solid #7ea4a4a4;
+    margin-bottom: 20px;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+@media (max-width: 960px) {
+    .block {
+        flex-direction: column;
+        text-align: center;
+    }
+    .block.rev {
+        flex-direction: column;
+    }
+    .info, .visual {
+        flex-basis: 100%;
+    }
+    .info {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    .message h1 {
+        font-size: 2.5rem;
+    }
+    .message h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .message h1 {
+        font-size: 2rem;
+    }
+    .signup {
+        flex-direction: column;
+    }
+    .cols {
+        grid-template-columns: 1fr 1fr;
+    }
+}
